@@ -52,17 +52,21 @@ TARDIS (Temperature And Radiative Diffusion In Supernovae) is an open-source rad
 ---
 
 ## First Objective Task
+Task : Add a method to the spectrum class that allows restoring the class from an HDF. Share the notebook in a pull request.
+
+Link to solution : [GSOC PR](https://github.com/tardis-sn/tardis/pull/2995)
+
+Explanation : from_hdf method is created on the TARDISSpectrum class to retrieve all the data from the hdf file and store as an object. The two main options that are required to initialize the spectrum class are the frequencies and luminosities. In the HDF file they are stored in the paths ```'/tardis_spectrum/_frequency'``` and ```'/tardis_spectrum/luminosity'``` respectively`. The data reciding in these paths is retrieved and the class is created.  
+
+
 
 ---
 
 ## My Approach towards the project
 
-
-
-
 ---
 
-### Milestones
+## Milestones
 
 
 ---
