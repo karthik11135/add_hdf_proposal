@@ -60,11 +60,11 @@ Reference : [HDFWriterMixin](https://github.com/tardis-sn/tardis/blob/6d63ee88f8
 The goal of this project is to enhance the capabilities of the HDF writing. It aims to build simulation state preservation, restoration and incorporate checkpoint integration with regression testing. 
 
 Benefits from the project
-1. Simulation state snapshot is stored accurately from future references. In this way, they can be shared with others. 
-2. Two simulation states can be compared
+1. Simulation state snapshot is stored accurately for future references. In this way, they can be shared with others. 
+2. Two simulation states can be compared.
 3. State reconstruction from an existing HDF file enables users to use the instance directly. 
 4. Automatic checkpoint integration enables to create HDF files whenever the condition occurs. 
-5. Debugging capabilities are improved
+5. Debugging capabilities are improved.
 6. The regression testing techqniues are most robust with the checkpoints.
 
 | **TARDIS Module**       | **State Storage**                                                                 | **Use cases** |
@@ -73,7 +73,7 @@ Benefits from the project
 | **Plasma Module**       | Ion and Level populations, Plasma properties (DilutePlanckianRadiationField, HeliumTreatment, JBlues, etc.) | Preserves complex plasma states for analysis; Allows comparison across iterations. |
 | **Transport Component** | Interaction of photons, Energies, Opacity states, etc.                          | Monte Carlo iterations can be restarted; Helps analyze packet propagation patterns. |
 | **Opacity Component**   | Line opacity data, Continuum opacity data                                       | Facilitates analysis of opacity updates during iterations. |
-| **Spectrum Component**  | Line formation regions, Spectra at different iterations                         | Supports spectral evolution comparison; Helps analyze line formation processes. |
+| **Spectrum Component**  | Line formation regions, spectra at different iterations                         | Supports spectral evolution comparison; Helps analyze line formation processes. |
 
 
 
@@ -91,9 +91,9 @@ Explanation : from_hdf method is created on the TARDISSpectrum class to retrieve
 
 ## My Approach towards the project
 
-A flexible schema can be created to store all data in HDF files. A base serialization class can be implemented to serialize complex data structures. Module-specific serialization can be implemented for all modules (e.g., Plasma, Transport, etc.).
+A flexible schema can be created to store all the data in HDF files. A base serialization class can be implemented to serialize complex data structures. Module-specific serialization can be implemented for all modules (e.g., Plasma, Transport, etc.).
 
-For checkpoints, a checkpoint manager can be implemented, utilizing various trigger algorithms (e.g., iteration based, time based, storage based, convergence based, etc.). Whenever a trigger condition is occured, a checkpoint is created. Each checkpoint is stored as an HDF5 file containing the entire simulation state. Iteration specific data can be retrieved from these files. Finally, necessary unit tests can be written, and proper documentation of code changes are to be updated.
+For checkpoints, a checkpoint manager can be implemented, utilizing various trigger methods (e.g., iteration based, time based, storage based, convergence based, etc.). Whenever a trigger condition is occured, a checkpoint is created. Each checkpoint is stored as an HDF5 file containing the entire simulation state. Iteration specific data can be retrieved from these files. Finally, necessary unit tests can be written, and proper documentation of code changes are to be updated.
 
 ```
 /checkpoints/
@@ -137,7 +137,7 @@ class ConvergenceTrigger:
 # In this example, the checkpoint trigger returns True when convergence occurs storing the Transport State, Plasma State, and other relevant data.
 ```
 
-To restore a simulation instance from an HDF5 file, module-specific logic can be implemented. The restoration process involves:
+To restore a simulation instance from an HDF5 file, module specific logic can be implemented. The restoration process involves:
 
 1. Loading the checkpoint (HDF5) file.
 
@@ -210,4 +210,4 @@ Apart from this, I actively explore new technologies and work on personal projec
 
 ### Conclusion
 
-In conclusion, my strong knowledge in Python, experience with open-source contributions, and familiarity with the TARDIS codebase make me a great fit for this project. While I have exams from May 3rd to May 9th, I will be entirely free afterward and fully committed to executing the project. I look forward to contribute meaningfully to the TARDIS RT Collaboration.
+In conclusion, my strong knowledge in Python, experience with open-source contributions, and familiarity with the TARDIS codebase make me a great fit for this project. While I have exams from May 3rd to May 9th, I will be entirely free afterward and fully committed to developing the project. I look forward to contribute my fullest to the TARDIS RT Collaboration.
