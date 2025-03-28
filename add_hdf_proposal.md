@@ -160,6 +160,8 @@ def restore_class(cls, state):
     return cls(opacity_state, packet_data)
 ```
 
+![approach diagram](./hdfapproachdiagram.png)
+
 ---
 
 ## Milestones
